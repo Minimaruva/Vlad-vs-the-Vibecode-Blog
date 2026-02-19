@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+
 title: Fun ideas to do
 author: Astro Learner
 description: "It doesnt hurt to share some inspiration"
