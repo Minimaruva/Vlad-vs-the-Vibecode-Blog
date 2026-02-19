@@ -7,7 +7,7 @@ image:
     url: "https://docs.astro.build/assets/rays.webp"
     alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2022-07-15
-tags: [ "learning in public", "setbacks", "community"]
+tags: [ "ideas", "community"]
 ---
 
 When consuming content online, social media in particular, I tend to stumble upon amazing ideas.
