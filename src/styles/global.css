@@ -1,15 +1,21 @@
 @import url("https://unpkg.com/7.css");
 
 html {
-  background-color: #f1f5f9;
   font-family: sans-serif;
+  min-height: 100%;
+  background-image: url("https://frutigeraeroarchive.org/images/wallpapers/asadal_stock/asadal_stock_7.jpg");
+  background-color: #cccccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
+  min-height: 100vh;
+  padding: 0;
   line-height: 1.5;
 }
 
@@ -80,6 +86,8 @@ h1 {
 
 /* ----DARK MODE ----------- */
 
+
+
 html.dark {
   background-color: #0d0950;
   color: #fff;
@@ -101,4 +109,79 @@ html.dark {
 
 .dark a {
   color: #ff9776;
+}
+
+
+/* Separate css for my footer */
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 0.75rem;
+  color: #fff;
+  z-index: 1000;
+  box-shadow: 0 -1px 9px rgba(0,0,0,0.5);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(60, 90, 130, 0.5) 0%,
+    rgba(20, 40, 80, 0.65) 100%
+  );
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(130, 170, 230, 0.55);
+  opacity: 0.35;
+  z-index: -1;
+}
+
+
+.bar-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 2rem;
+  padding: 0 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.78rem;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  white-space: nowrap;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.bar-button:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(180, 210, 255, 0.25) 0%,
+    rgba(80, 130, 210, 0.35) 100%
+  );
+  border-color: rgba(130, 180, 255, 0.6);
+  box-shadow: 0 0 6px rgba(100, 160, 255, 0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.bar-button:active {
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 80, 160, 0.5) 0%,
+    rgba(100, 150, 230, 0.3) 100%
+  );
+  border-color: rgba(100, 150, 255, 0.7);
+}
+
+.bar-button img {
+  width: 2rem;
+  height: 2rem;
+  image-rendering: pixelated;
 }
