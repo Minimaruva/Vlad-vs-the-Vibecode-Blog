@@ -13,21 +13,10 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <div class="window desktop-window" style="position:absolute; top:2rem; left:calc(50vw - 40ch); width:80ch;">
-      <div class="title-bar">
-        <div class="title-bar-text">{pageTitle}</div>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
-        </div>
-      </div>
-      <div class="window-body has-space">
-        <Header />
-        <slot />
-        <Footer />
-      </div>
-    </div>
+    <Header />
+    <h1>{pageTitle}</h1>
+    <slot />
+    <Footer />
     <script>
       import "../scripts/menu.js";
     </script>
