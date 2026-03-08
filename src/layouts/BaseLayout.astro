@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import DesktopIcons from '../components/DesktopIcons.astro';
 import '../styles/global.css';
 const { pageTitle } = Astro.props;
 ---
@@ -11,10 +12,13 @@ const { pageTitle } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    
-    <div class="window desktop-window" style="position:absolute; top:2rem; left:calc(50vw - 40ch); width:80ch;">
+
+    <DesktopIcons />
+
+    <div class="window desktop-window" style="position:absolute; top:2rem; left:calc(50vw - 40ch); width:80ch; z-index:10;">
       <div class="title-bar">
         <div class="title-bar-text">{pageTitle}</div>
         <div class="title-bar-controls">

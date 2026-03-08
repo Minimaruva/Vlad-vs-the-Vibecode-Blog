@@ -84,7 +84,53 @@ h1 {
   }
 }
 
-/* ----DARK MODE ----------- */
+/* ---- DESKTOP ICONS ----------- */
+
+.desktop-icons {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  z-index: 1;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  width: 4.5rem;
+  padding: 0.3rem 0.2rem;
+  text-decoration: none;
+  color: inherit; /* don't bleed a color down to the icon */
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.desktop-icon i {
+  font-size: 2rem;
+  filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.8));
+  color: inherit; /* each icon sets its own color via inline style */
+}
+
+.desktop-icon span {
+  font-size: 0.72rem;
+  color: #fff; /* label is always white regardless of icon color */
+  text-shadow: 1px 1px 2px #000, 0 0 6px #000;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.desktop-icon:hover,
+.desktop-icon:focus {
+  background-color: rgba(49, 106, 197, 0.45);
+  outline: 1px dotted rgba(255, 255, 255, 0.7);
+}
+
+/* ---- DARK MODE ----------- */
 
 
 
