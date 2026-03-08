@@ -4,6 +4,25 @@ import Greeting from '../components/Greeting';
 const pageTitle = "Home Page";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+  <h2>Hi! My name is Vlad, welcome to my website!</h2>
+  <h3>About me</h3>
+  <p>
+    I'm a student at UOS studying Computer Science with AI.
+    I am very pattionate about positive use of ai, especially in education!
+  </p>
+  <h3>What I do</h3>
+  <p>
+    Apart from studying I also volunteer at <a href="https://www.svitloschool.com/" target="_blank" rel="noopener noreferrer">Svitlo School</a>, a uk-based charity that helped Ukrainian kids discloated by war to get access to quality education. 
+    I also have a few personal projects:
+    <ul>
+      <li><a href="https://github.com/Minimaruva/Neural-Net-from-Scratch" target="_blank" rel="noopener noreferrer">Neural Net from Scratch</a> - a simple implementation of a neural network in Python, built from the ground up without using any machine learning libraries. It's a great way to understand the inner workings of neural networks and how they learn.</li>
+    </ul>
+    </p>
+    
+  <h3>Contact me</h3>
+  <p>
+    If you'd like to get in touch, feel free to reach out to me on <a href="https://www.linkedin.com/in/vladyslav-yahnon-270828350/"
+      target="_blank" rel="noopener noreferrer">LinkedIn</a> or check out my projects on <a href="github.com/Minimaruva" target="_blank" rel="noopener noreferrer">GitHub</a>.
+  </p>
   <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
