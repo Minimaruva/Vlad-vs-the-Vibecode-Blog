@@ -5,9 +5,10 @@ menu?.addEventListener('click', () => {
     menu.setAttribute('aria-expanded', `${!isExpanded}`);
 });
 
-// Window management
+// Expose highestZIndex globally
+window.highestZIndex = window.highestZIndex || 10;
+
 const windows = document.querySelectorAll('.desktop-window');
-let highestZIndex = 10;
 
 windows.forEach(win => {
   const titleBar = win.querySelector('.title-bar');
@@ -15,8 +16,8 @@ windows.forEach(win => {
   const windowBody = win.querySelector('.window-body');
 
   function bringToFront() {
-    highestZIndex++;
-    win.style.zIndex = highestZIndex;
+    window.highestZIndex++;
+    win.style.zIndex = window.highestZIndex;
   }
 
   win.addEventListener('mousedown', bringToFront);
@@ -44,7 +45,6 @@ function dragElement(win, handle, bringToFront, windowBody) {
     document.onmouseup = closeDragElement;
     document.onmousemove = elementDrag;
     
-    // Disable pointer events on the embed while dragging
     if (windowBody) windowBody.style.pointerEvents = 'none';
   }
 
@@ -62,7 +62,6 @@ function dragElement(win, handle, bringToFront, windowBody) {
     document.onmouseup = null;
     document.onmousemove = null;
     
-    // Restore pointer events so the PDF can be clicked/scrolled again
     if (windowBody) windowBody.style.pointerEvents = 'auto';
   }
 }
