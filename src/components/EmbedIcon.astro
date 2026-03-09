@@ -1,0 +1,22 @@
+---
+import '../styles/global.css';
+import EmbedWindow from './EmbedWindow.astro';
+
+interface Props {
+  label: string;
+  icon: string;
+  color?: string;
+  windowTitle?: string;
+}
+const { label, icon, color, windowTitle } = Astro.props;
+// Generate a unique ID for each window
+const windowId = `html-win-${Math.random().toString(36).substring(2, 9)}`;
+---
+<button class="desktop-icon" onclick={`document.getElementById('${windowId}').style.display = 'block'`}>
+  <i class={icon} style={color ? `color:${color}` : undefined}></i>
+  <span>{label}</span>
+</button>
+
+<EmbedWindow id={windowId} pageTitle={windowTitle ?? label}>
+  <slot />
+</EmbedWindow>

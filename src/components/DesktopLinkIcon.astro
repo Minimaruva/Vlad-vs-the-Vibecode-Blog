@@ -1,0 +1,15 @@
+---
+// This are desktop icons that open external links in new tab
+// for stuff like social media or github
+interface Props {
+  href: string;
+  label: string;
+  icon: string; // Font Awesome class string, e.g. "fa-brands fa-github"
+  color?: string; // icon color, e.g. "#0A66C2" — does not affect label
+}
+const { href, label, icon, color } = Astro.props;
+---
+<a href={href} class="desktop-icon" target="_blank" rel="noopener noreferrer">
+  <i class={icon} style={color ? `color:${color}` : undefined}></i>
+  <span>{label}</span>
+</a>

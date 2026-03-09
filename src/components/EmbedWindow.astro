@@ -1,17 +1,18 @@
 ---
+// This is a window component that can be used to embed content like iframes or markdown
 import '../styles/global.css';
-const { pageTitle, url, description } = Astro.props;
+const { pageTitle, id } = Astro.props;
 ---
-<div class="window desktop-window" style="position:absolute; top:2rem; left:calc(50vw - 40ch); width:80ch; z-index:10;">
-      <div class="title-bar">
-        <div class="title-bar-text">{pageTitle}</div>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
-        </div>
-      </div>
-      <div class="window-body has-space has-scrollbar" style="max-height:70vh; overflow-y:auto;">
-        <iframe src={url} title={description}></iframe>
-      </div>
+<div id={id} class="window desktop-window" style="display: none; position:absolute; top:2rem; left:calc(50vw - 40vw); width:80vw; z-index:10;">
+  <div class="title-bar">
+    <div class="title-bar-text">{pageTitle}</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body has-scrollbar" style="max-height:80vh; overflow-y:auto; margin:0; padding:0;">
+    <slot />
+  </div>
 </div>

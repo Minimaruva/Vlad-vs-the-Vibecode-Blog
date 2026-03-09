@@ -5,45 +5,64 @@ menu?.addEventListener('click', () => {
     menu.setAttribute('aria-expanded', `${!isExpanded}`);
 });
 
-// Draggable windows
-const titleBar = document.querySelector(".title-bar");
-const win = document.querySelector(".desktop-window");
+// Window management
+const windows = document.querySelectorAll('.desktop-window');
+let highestZIndex = 10;
 
-if (titleBar && win) {
-  dragElement(win, titleBar);
-}
+windows.forEach(win => {
+  const titleBar = win.querySelector('.title-bar');
+  const closeBtn = win.querySelector('[aria-label="Close"]');
+  const windowBody = win.querySelector('.window-body');
 
-function dragElement(win, handle) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  function bringToFront() {
+    highestZIndex++;
+    win.style.zIndex = highestZIndex;
+  }
+
+  win.addEventListener('mousedown', bringToFront);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      win.style.display = 'none';
+    });
+  }
+
+  if (titleBar) {
+    dragElement(win, titleBar, bringToFront, windowBody);
+  }
+});
+
+function dragElement(win, handle, bringToFront, windowBody) {
+  let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   handle.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
-    e = e || window.event;
     e.preventDefault();
-    // get the mouse cursor position at startup:
+    bringToFront();
     pos3 = e.clientX;
     pos4 = e.clientY;
     document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
+    
+    // Disable pointer events on the embed while dragging
+    if (windowBody) windowBody.style.pointerEvents = 'none';
   }
 
   function elementDrag(e) {
-    e = e || window.event;
     e.preventDefault();
-    // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
-    // set the window's new position:
     win.style.top = (win.offsetTop - pos2) + "px";
     win.style.left = (win.offsetLeft - pos1) + "px";
   }
 
   function closeDragElement() {
-    // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+    
+    // Restore pointer events so the PDF can be clicked/scrolled again
+    if (windowBody) windowBody.style.pointerEvents = 'auto';
   }
 }
