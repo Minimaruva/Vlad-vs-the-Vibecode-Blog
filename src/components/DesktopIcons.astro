@@ -3,6 +3,7 @@ import DesktopIcon from './DesktopIcon.astro'; // deprecated
 import DesktopLinkIcon from './DesktopLinkIcon.astro';
 import EmbedIcon from './EmbedIcon.astro';
 import BubbleIcon from './BubbleIcon.astro';
+import Exporer from './Explorer.astro';
 ---
 <div class="desktop-icons">
   <DesktopLinkIcon href="https://github.com/Minimaruva" label="GitHub" icon="fa-brands fa-square-github" color="#f0f6fc"  />
@@ -17,4 +18,7 @@ import BubbleIcon from './BubbleIcon.astro';
   <img src="../public/me_speech.jpg" alt="Me during speech day" style="width:1200px; height:500px;">
   </EmbedIcon>
   <BubbleIcon label="bubbles.exe" icon="fa-solid fa-wand-sparkles" color="#00aaff" />
+  <EmbedIcon label="explorer.exe" icon="fa-regular fa-folder-closed" color="#00000">
+    <Exporer />
+  </EmbedIcon>
 </div>

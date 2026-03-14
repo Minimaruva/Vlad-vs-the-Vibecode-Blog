@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+const { pageTitle } = Astro.props;
+
+---
+
+<div>
+  <h1>{pageTitle}</h1>
+  <p>This is the explorer page content.</p>
+
+  <div style="display:flex; flex-direction:row; gap:1rem; align-items:flex-start;">
+    <div class="window-body has-scrollbar" style="max-height:60vh; overflow-y:auto; min-width:260px; padding:0.5rem 0.75rem;">
+      <ul class="tree-view has-collapse-button has-connector has-container">
+        <details open>
+          <summary>JavaScript</summary>
+          <ul>
+            <li>Avoid at all costs</li>
+            <li>
+              <details>
+                <summary>Unless</summary>
+                <ul>
+                  <li>Avoid</li>
+                  <li>
+                    <details>
+                      <summary>At</summary>
+                      <ul>
+                        <li>Avoid</li>
+                        <li>At</li>
+                        <li>All</li>
+                        <li>Cost</li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>All</li>
+                  <li>Cost</li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+        <details open>
+          <summary>JavaScript</summary>
+          <ul>
+            <li>Avoid at all costs</li>
+            <li>
+              <details>
+                <summary>Unless</summary>
+                <ul>
+                  <li>Avoid</li>
+                  <li>
+                    <details>
+                      <summary>At</summary>
+                      <ul>
+                        <li>Avoid</li>
+                        <li>At</li>
+                        <li>All</li>
+                        <li>Cost</li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>All</li>
+                  <li>Cost</li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+            <details open>
+          <summary>JavaScript</summary>
+          <ul>
+            <li>Avoid at all costs</li>
+            <li>
+              <details>
+                <summary>Unless</summary>
+                <ul>
+                  <li>Avoid</li>
+                  <li>
+                    <details>
+                      <summary>At</summary>
+                      <ul>
+                        <li>Avoid</li>
+                        <li>At</li>
+                        <li>All</li>
+                        <li>Cost</li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li>All</li>
+                  <li>Cost</li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </ul>
+    </div>
+
+    <div class="window-body has-space has-scrollbar" style="max-height:70vh; overflow-y:auto;">
+      <slot /> 
+      <p>Hello world</p>
+      <p>Hello world</p>
+      <p>Hello world</p>
+      <p>Hello world</p>
+      <p>Hello world</p>
+      <p>Hello world</p>
+      <p>Hello world</p>
+      <p>Hello world</p>
+    </div>
+  </div>
+</div>
+
+
