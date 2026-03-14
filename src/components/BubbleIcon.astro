@@ -1,0 +1,20 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  label: string;
+  icon: string;
+  color?: string;
+}
+
+const { label, icon, color } = Astro.props;
+---
+<button
+  class="desktop-icon"
+  type="button"
+  onclick="window.startBubbleGame && window.startBubbleGame()"
+  aria-label={`${label} launcher`}
+>
+  <i class={icon} style={color ? `color:${color}` : undefined}></i>
+  <span>{label}</span>
+</button>
