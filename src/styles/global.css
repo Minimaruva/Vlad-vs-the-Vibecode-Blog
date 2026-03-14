@@ -110,6 +110,15 @@ h1 {
   cursor: pointer;
 }
 
+/* Strip native/7.css chrome from button-based desktop icons */
+button.desktop-icon {
+  background: none;
+  border: none;
+  box-shadow: none;
+  appearance: none;
+  padding: 0.3rem 0.2rem;
+}
+
 .desktop-icon i {
   font-size: 2rem;
   filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.8));
@@ -124,8 +133,11 @@ h1 {
   line-height: 1.2;
 }
 
+
 .desktop-icon:hover,
-.desktop-icon:focus {
+.desktop-icon:focus,
+button.desktop-icon:hover,
+button.desktop-icon:focus {
   background-color: rgba(49, 106, 197, 0.45);
   outline: 1px dotted rgba(255, 255, 255, 0.7);
 }
