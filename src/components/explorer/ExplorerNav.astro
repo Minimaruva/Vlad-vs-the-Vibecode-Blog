@@ -1,0 +1,18 @@
+---
+import '../../styles/global.css';
+import ExplorerBreadcrumbs from './ExplorerBreadcrumbs.astro';
+---
+
+<div class="explorer-nav">
+    <div class="explorer-nav__controls">
+        <button type="button" class="nav-btn" aria-label="Go back" disabled>
+            <i class="fa-solid fa-angle-left"></i>
+        </button>
+        <button type="button" class="nav-btn" aria-label="Go forward" disabled>
+            <i class="fa-solid fa-angle-right"></i>
+        </button>
+    </div>
+
+    <ExplorerBreadcrumbs />
+</div>
+
